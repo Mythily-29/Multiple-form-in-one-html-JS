@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <main>
+        <div class="steps">
+            <div>1</div>
+            <div class="step"></div>
+            <div>2</div>
+            <div class="step"></div>
+            <div>3</div>
+        </div>
+        <form action="">
+            <div class="form">
+                <label for="">Name</label>
+                <input type="text" name="name" class="inputFields" oninput="createData(this)">
+                <label for="">Email</label>
+                <input type="text" name="gmail" class="inputFields" oninput="createData(this)" >
+                <label for="">mother name</label>
+                <input type="text" name="mothername" class="inputFields" oninput="createData(this)">
+                <label for="">father name</label>
+                <input type="text" name="fathername" class="inputFields" oninput="createData(this)">
+            </div>
+            <div class="form">
+                <label for="">Schoolname</label>
+                <input type="text" name="schoolname" class="inputFields" oninput="createData(this)">
+                <label for="">College name</label>
+                <input type="text" name="collegename" class="inputFields" oninput="createData(this)">
+                <label for="">Skills</label>
+                <input type="text" name="skillname" class="todoField">
+                <label for="">Field</label>
+                <input type="text" name="fieldname" class="todoField">
+                <button id="add-btn">ADD</button>
+                <div id="todo"></div>
+            </div>
+            <div class="form">
+                <label for="">Aadhar</label>
+                <input type="text" name="aadhar" class="inputFields" oninput="createData(this)">
+                <label for="">PAN</label>
+                <input type="text" name="pan" class="inputFields" oninput="createData(this)">
+            </div>
+            <div class="form">
+                <a href="" id="link">click here to form</a>
+                <h2>Successfully completed</h2>
+            </div>
+            <div class="btn">
+                <button class="previous">Previous</button>
+                <button class="next">Next</button>
+            </div>
+        </form>
+    </main>
+    <script src="sample.js"></script>
+</body>
+</html>

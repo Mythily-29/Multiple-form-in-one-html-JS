@@ -1,0 +1,126 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.5;
+    background: #f5f7fa;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
+  }
+  .steps{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+  }
+  .form {
+    display: none;
+    background: white;
+    padding: 1.75rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+    font-size: 0.95rem;
+  }
+  
+  input {
+    width: 95%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+  }
+  .border{
+    border-color: red;
+  }
+  input:focus {
+    border-color: #3a86ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
+  }
+  
+  button {
+    background: #3a86ff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  button:hover {
+    background: #2667d6;
+  }
+  
+  #todo div {
+    background: white;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #todo span {
+    flex: 1;
+  }
+  
+  #todo button {
+    margin-left: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  .previous{
+    background-color: #7585a0;
+  }
+  #edits{
+    background-color: rgb(86, 211, 113);
+  }
+  #delet{
+    background-color: red;
+  }
+  #link {
+    color: #3a86ff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1.25rem;
+    transition: color 0.2s;
+  }
+  
+  #link:hover {
+    color: #2667d6;
+    text-decoration: underline;
+  }
+#add-btn{
+    background-color: rgb(107, 112, 189);
+}
+  .style{
+    height: 15px;
+    width: 200px;
+    background-color: #bbbbbb;
+    border: none;  
+    display: inline-block;
+    background-color:green;
+
+  }
+  

@@ -4,7 +4,7 @@ let step=document.querySelectorAll('.step')
 let todoarr=JSON.parse(localStorage.getItem('user'));
 let todoInputs=document.querySelectorAll('.todoField');
 let userinput=JSON.parse(localStorage.getItem('userInput'))||[];
-let todoEditId;
+let todoEditId,todoEvent;
 
 window.onload=()=>{
     
@@ -21,7 +21,7 @@ window.onload=()=>{
         }
     })
     arr.todos.forEach((input)=>{
-        $('#todo').append(`<div><span>${input.skillname}</span><span>${input.fieldname}</span><button onclick='edit(${input.id})' id='edits' type='button'>Edit</button><button onclick='deletValues(${input.id})' id='delet' type='button'>Delete</button></div>`)
+        $('#todo').append(`<div><span>${input.skillname}</span><span>${input.fieldname}</span><button onclick='edit(event,${input.id})' id='edits' type='button'>Edit</button><button onclick='deletValues(event,${input.id})' id='delet' type='button'>Delete</button></div>`)
     })
 }
 function createData(ele){
@@ -89,13 +89,15 @@ $('#add-btn').click(function(e){
     })
     if(flag){
         if( $('#add-btn').text()==='edit'){
+            let change=todoEvent.querySelectorAll('span')
+            change[0].textContent=todoInputs[0].value;change[1].textContent=todoInputs[1].value
             arr.todos.find(changeValues=>{if(changeValues.id==todoEditId){
                 changeValues.skillname=todoInputs[0].value;changeValues.fieldname=todoInputs[1].value;
-                $('#add-btn').text('ADD');todoEditId;
+                $('#add-btn').text('ADD');todoEditId;todoEvent;
             }})
         }
         else{
-            $('#todo').append(`<div><span>${todoInputs[0].value}</span><span>${todoInputs[1].value}</span><button onclick="edit(${idGenerate})" id='edits' type='button'>Edit</button><button id='delet' onclick='deletValues(${idGenerate})' type='button'>Delete</button></div>`)
+            $('#todo').append(`<div><span>${todoInputs[0].value}</span><span>${todoInputs[1].value}</span><button onclick="edit(event,${idGenerate})" id='edits' type='button'>Edit</button><button id='delet' onclick='deletValues(event,${idGenerate})' type='button'>Delete</button></div>`)
             arr.todos.push({'id':idGenerate,'skillname':todoInputs[0].value,'fieldname':todoInputs[1].value})
         }
         localStorage.setItem('user',JSON.stringify(arr))
@@ -107,17 +109,19 @@ $('#link').click(function(){
     getindex=0;show(getindex)
 })
 
-function edit(id){
-    $('#add-btn').text('edit');todoEditId=id
+function edit(event,id){
+    $('#add-btn').text('edit');todoEditId=id;
+    todoEvent=event.target.parentElement;
     let editValue=todoarr.todos.filter(editId=>editId.id==id)
     todoInputs[0].value=editValue[0].skillname;
     todoInputs[1].value=editValue[0].fieldname
 }
 
-function deletValues(id){
+function deletValues(event,id){
     if(todoarr.todos){
         todoarr.todos=todoarr.todos.filter(deleteid=>deleteid.id != id)
         localStorage.setItem('user',JSON.stringify(todoarr))
     }
+    event.target.parentElement.remove()
 }
 

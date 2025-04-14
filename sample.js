@@ -113,12 +113,14 @@ $('#link').click(function(){
 function edit(event,id){
     $('#add-btn').text('edit');todoEditId=id;
     todoEvent=event.target.parentElement;
+    todoarr = JSON.parse(localStorage.getItem('user'));
     let editValue=todoarr.todos.filter(editId=>editId.id==id)
     todoInputs[0].value=editValue[0].skillname;
     todoInputs[1].value=editValue[0].fieldname
 }
 
 function deletValues(event,id){
+    todoarr = JSON.parse(localStorage.getItem('user'));
     if(todoarr.todos){
         todoarr.todos=todoarr.todos.filter(deleteid=>deleteid.id != id)
         localStorage.setItem('user',JSON.stringify(todoarr))

@@ -73,7 +73,7 @@ function validation(come){
             step[getindex].classList.add('style')
         }
         getindex++
-        if(getindex==3){userinput.push(JSON.parse(localStorage.getItem('user')));localStorage.setItem('userInput',JSON.stringify(userinput));setTimeout(()=>{localStorage.removeItem('user')},7000)}
+        if(getindex==3){userinput.push(JSON.parse(localStorage.getItem('user')));localStorage.setItem('userInput',JSON.stringify(userinput));setTimeout(()=>{localStorage.removeItem('user')},4000)}
         if(getindex==4)return
         show(getindex)
     } 
@@ -101,6 +101,7 @@ $('#add-btn').click(function(e){
             arr.todos.push({'id':idGenerate,'skillname':todoInputs[0].value,'fieldname':todoInputs[1].value})
         }
         localStorage.setItem('user',JSON.stringify(arr))
+        todoInputs.forEach(todos=>todos.value='')
     }
     
 })
